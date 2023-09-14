@@ -1,6 +1,6 @@
 {
     "name": "ImportAnnotationWidget",
-    "description": "widget to import annotation",
+    "description": "A simple widget to import multiple annotations at once by using the Matomo UI",
     "version": "0.1.0",
     "theme": false,
     "require": {
@@ -8,14 +8,14 @@
     },
     "authors": [
         {
-            "name": "Matomo",
+            "name": "Ronan Chardonneau and Ronan Hello",
             "email": "",
-            "homepage": ""
+            "homepage": "https://github.com/Chardonneaur/ImportAnnotationWidget/"
         }
     ],
     "support": {
         "email": "",
-        "issues": "",
+        "issues": "https://github.com/Chardonneaur/ImportAnnotationWidget/issues",
         "forum": "",
         "irc": "",
         "wiki": "",
@@ -23,7 +23,7 @@
         "docs": "",
         "rss": ""
     },
-    "homepage": "",
+    "homepage": "https://github.com/Chardonneaur/ImportAnnotationWidget/",
     "license": "GPL v3+",
-    "keywords": []
+    "keywords": ["annotations"]
 }

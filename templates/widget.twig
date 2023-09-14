@@ -1,0 +1,53 @@
+<div class="widgetBody">
+<form action="" method="GET" id="annotations-form">
+
+<div class="input-field">
+    <input type="number" class="control_text" id="annotation-idsite" required min="1" step="1">
+    <label for="annotation-idsite">idSite</label>
+</div>
+<div class="input-field">
+    <input type="text" class="control_text" id="annotation-token-auth" required minlength="32" maxlength="32">
+    <label for="annotation-token-auth">token_auth</label>
+</div>
+    <div class="input-field">
+        <textarea class="materialize-textarea" id="annotations"></textarea>
+        <label for="annotations">Insert your content here like this YYYY-MM-DD,lorem ipsum</label>
+    </div>
+
+    
+
+    <button type="submit" class="btn">Send</button>
+</form>
+</div>
+<script>
+    let form = document.getElementById('annotations-form')
+    form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        let idSite = document.getElementById('annotation-idsite').value
+        let tokenAuth = document.getElementById('annotation-token-auth').value
+        
+        let textarea = document.getElementById('annotations')
+        let csv = textarea.value
+
+
+        let baseUrl = '?module=API'
+        baseUrl += `&method=API.getBulkRequest`
+        baseUrl += `&format=json`
+        baseUrl += `&token_auth=${tokenAuth}`
+        
+        let annotationsRaw = csv.split('\n');
+        let annotations = [];
+        annotationsRaw.forEach((item, index) => {
+            let annotation = item.split(',')
+            baseUrl += `&urls[${index}]=`
+            baseUrl += encodeURIComponent(`method=Annotations.add`)
+            baseUrl += encodeURIComponent(`&idSite=${idSite}`)
+            baseUrl += encodeURIComponent(`&date=${annotation[0]}`)
+            baseUrl += encodeURIComponent(`&note=${annotation[1]}`)
+        })
+
+        fetch(baseUrl)
+
+        console.log(baseUrl)
+    })
+</script>

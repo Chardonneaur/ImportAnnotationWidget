@@ -1,7 +1,7 @@
 {
     "name": "ImportAnnotationWidget",
     "description": "A simple widget to import multiple annotations at once by using the Matomo UI",
-    "version": "0.1.0",
+    "version": "0.1.2",
     "theme": false,
     "require": {
         "matomo": ">=4.0.0,<5.0.0-b1"

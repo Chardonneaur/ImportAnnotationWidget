@@ -48,7 +48,9 @@
         })
 
         let outputMessage = document.getElementById('output-message')
-        fetch(baseUrl)
+        fetch(baseUrl, {
+            method: 'POST'
+        })
             .then(response => {
                 if(response.status === 200){
                     outputMessage.innerText = 'success'

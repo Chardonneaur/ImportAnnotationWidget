@@ -7,11 +7,7 @@ use Piwik\Widget\WidgetConfig;
 
 class GetImportAnnotation extends Widget
 {
-    // Base URL and token moved to class properties for easier management
-    private $baseUrl = "http://localhost:8000"; // Replace with your Matomo URL
-    private $token = "d166e0a3027f11f48ba08ca035ec71f2"; // Replace with your API token
-
-    public static function configure(WidgetConfig $config)
+        public static function configure(WidgetConfig $config)
     {
         $config->setCategoryId('Annotations_Annotations');
         $config->setName('ImportAnnotationWidget_ImportAnnotation');
